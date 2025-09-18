@@ -194,3 +194,19 @@ Para dúvidas ou suporte, entre em contato através do email: suporte@peerbr.com
 
 **Desenvolvido com ❤️ pela equipe PeerBR**
 
+
+
+
+## ⚙️ Alterações para Deploy no Render
+
+Foram realizadas as seguintes alterações no projeto para facilitar o deploy no Render:
+
+### Backend
+- Adicionado `gunicorn` e `psycopg2-binary` ao `backend/requirements.txt` para o servidor WSGI e suporte a PostgreSQL.
+- Ajustada a configuração do `SQLALCHEMY_DATABASE_URI` em `backend/app/__init__.py` para detectar e configurar corretamente o PostgreSQL no ambiente do Render.
+
+### Frontend
+- Criado o arquivo `frontend/public/_redirects` com `/* /index.html 200` para garantir o correto funcionamento do roteamento de Single Page Applications (SPA) no Render.
+
+Para um guia detalhado de deploy no Render, consulte o arquivo `RENDER_DEPLOY_GUIDE.md`.
+
